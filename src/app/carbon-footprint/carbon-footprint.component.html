@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="card">
+    <h2>Résumé de la consommation</h2>
+    <div class="card-detail">
+      <p>
+        Consommation pour 100 km :
+        <span [ngClass]="{
+      'rouge': consommationPour100Km > 7,
+      'vert': consommationPour100Km < 4
+    }">
+          {{ consommationPour100Km | number:'1.0-2' }} L/100
+        </span>
+      </p>
+    </div>
+    <div class="card-detail">
+      <p [ngClass]="{
+      'haute-distance': distanceKm > 500,
+      'basse-distance': distanceKm < 100
+    }"> Distance parcourue : {{ distanceKm }} km</p>
+    </div>
+    <div class="card-detail">
+      <p>
+        Consommation totale :
+        {{ (distanceKm * consommationPour100Km) / 100 | number:'1.0-2' }}
+      </p>
+    </div>
+
+    <div *ngIf="consommationPour100Km > 7">
+      ⚠️ Attention, votre consommation est élevée
+    </div>
+    <div *ngIf="consommationPour100Km < 4">
+      🎉 Félicitations, votre consommation est faible </div>
+  </div>
+
+  <div class="card">
+    <div class="flexbox">
+      <h2>Liste des voyages</h2>
+      <button (click)="genererVoyage()">Générer voyage</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Distance</th>
+          <th>Consommation pour 100 kms</th>
+          <th>Quantité CO2</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let voyage of voyages">
+          <td>{{ voyage.distanceKm }} km</td>
+          <td>{{ voyage.consommationPour100Km }} L</td>
+          <td>{{ voyage.quantiteCO2 | number:'1.0-2' }} L</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="card">
+    <app-carbon-footprint-result></app-carbon-footprint-result>
+  </div>
+  <div class="card">
+    <app-carbon-footprint-form></app-carbon-footprint-form>
+  </div>
+</div>
