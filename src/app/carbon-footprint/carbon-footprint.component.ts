@@ -8,6 +8,7 @@ import { CarbonFootprintCompute } from "../service/carbon-footprint-compute";
   selector: 'app-carbon-footprint',
   templateUrl: './carbon-footprint.component.html',
   imports: [CarbonFootprintResult, CarbonFootprintForm, CommonModule],
+  standalone: true,
   styleUrls: ['./carbon-footprint.component.scss']
 })
 export class CarbonFootprint implements OnInit {

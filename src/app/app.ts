@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { Header } from './header/header.component';
 import { Footer } from './footer/footer.component';
-import { CarbonFootprint } from './carbon-footprint/carbon-footprint.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Header, Footer, CarbonFootprint],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
