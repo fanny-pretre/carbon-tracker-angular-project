@@ -1,1 +1,27 @@
-<p>accueil works!</p>
+<div class="home-container" *ngIf="dashboard$ | async as data">
+
+    <!-- Score carbone -->
+    <div class="card card-score">
+        <h2>Ton score cette semaine</h2>
+        <p class="score">{{ data.score }} kg CO₂ économisés</p>
+    </div>
+
+    <!-- Actions du jour -->
+    <div class="card card-actions">
+        <h3>Actions du jour</h3>
+        <ul>
+            <li *ngFor="let action of data.actions">{{ action }}</li>
+        </ul>
+    </div>
+
+    <!-- Résumé par catégorie -->
+    <div class="card card-summary">
+        <h3>Résumé par catégorie</h3>
+        <ul>
+            <li>Transport : {{ data.summary.transport }} kg CO₂</li>
+            <li>Alimentation : {{ data.summary.alimentation }} kg CO₂</li>
+            <li>Énergie : {{ data.summary.energie }} kg CO₂</li>
+        </ul>
+    </div>
+
+</div>

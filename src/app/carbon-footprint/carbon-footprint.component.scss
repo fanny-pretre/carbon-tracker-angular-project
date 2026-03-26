@@ -1,72 +1,76 @@
-.rouge,
-.basse-distance {
-    color: red;
-    font-weight: bold;
-}
-
-.vert,
-.haute-distance {
-    color: #22c55e;
-    font-weight: bold;
-}
-
 .container {
+    max-width: 900px;
+    margin: 2rem auto;
     display: flex;
-    gap: 2rem;
-    min-height: 71vh;
-    margin: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
 
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-    .card {
-        flex: 1;
-        min-width: 0;
-        padding: 1.5rem 2rem;
-        border-radius: 1rem;
+    h2 {
+        margin: 0 0 0.8rem 0;
+        color: #4caf50;
+    }
 
-        background-color: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
+    .card-detail {
+        margin-bottom: 0.5rem;
 
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.08);
-
-        .card-detail {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-
-            padding: 1.2rem 1.5rem;
-            border-radius: 0.75rem;
-            background-color: white;
-
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-            transition: 0.2s ease;
-
-            span {
-                flex: 1;
-            }
-
-            span:last-child {
-                text-align: right;
-                font-weight: bold;
-            }
-
-            &:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            }
-
-            button {
-                margin-left: auto;
-            }
+        p {
+            margin: 0;
+            font-size: 0.95rem;
         }
+    }
 
-        // bouton global dans la card (si en dehors de card-detail)
-        button {
-            align-self: flex-end;
+    .rouge {
+        color: #d32f2f;
+        font-weight: bold;
+    }
+
+    .vert {
+        color: #4caf50;
+        font-weight: bold;
+    }
+
+    .haute-distance {
+        color: #d32f2f;
+    }
+
+    .basse-distance {
+        color: #4caf50;
+    }
+
+    div[ngIf] {
+        margin-top: 0.5rem;
+        font-weight: 600;
+    }
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    button {
+        background: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: #388e3c;
         }
     }
 }
@@ -74,64 +78,35 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    background-color: white;
-    border-radius: 1rem;
-    overflow: hidden;
+    margin-top: 0.5rem;
 
-    thead {
-        background-color: #22c55e;
-        color: white;
-
-        th {
-            text-align: left;
-            padding: 1rem;
-            font-weight: 700;
-        }
+    th,
+    td {
+        padding: 0.6rem 0.8rem;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 0.9rem;
     }
 
-    tbody {
-        tr {
-            transition: 0.2s ease;
+    th {
+        background: #f7f7f7;
+        font-weight: 600;
+        color: #333;
+    }
 
-            &:nth-child(even) {
-                background-color: #f9fafb;
-            }
-
-            &:hover {
-                background-color: #ecfdf5;
-                transform: scale(1.01);
-            }
-        }
-
-        td {
-            padding: 1rem;
-        }
+    tbody tr:hover {
+        background: #f6fff6;
     }
 }
 
-button {
-    background-color: #22c55e;
-    border: none;
-    padding: 0.9rem 1.4rem;
-    border-radius: 0.75rem;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-
-
-    transition: all 0.2s ease;
-
-    &:hover {
-        background-color: #16a34a;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 12px rgba(34, 197, 94, 0.3);
+/* Responsive */
+@media (max-width: 700px) {
+    .container {
+        padding: 0 1rem;
     }
 
-    &:active {
-        transform: translateY(0);
-        box-shadow: none;
+    table th,
+    table td {
+        font-size: 0.85rem;
     }
-
 }
