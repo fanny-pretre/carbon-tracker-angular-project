@@ -7,6 +7,6 @@ import { Contact } from './contact/contact';
 export const routes: Routes = [
     { path: '', component: Accueil },
     { path: 'carbonfootprint', component: CarbonFootprint },
-    { path: 'conseils', component: Conseils },
+    { path: 'conseils', component: Conseils, runGuardsAndResolvers: 'always' },
     { path: 'contact', component: Contact },
 ];
