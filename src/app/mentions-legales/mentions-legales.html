@@ -1,0 +1,7 @@
+<div class="mentions-container" *ngIf="mentions$ | async as mentions">
+    <h1>{{ mentions.title }}</h1>
+    <ul>
+        <li *ngFor="let line of mentions.content">{{ line }}</li>
+    </ul>
+    <img src="/herisson-jardin.jpg">
+</div>

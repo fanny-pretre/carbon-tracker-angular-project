@@ -1,59 +1,93 @@
-# CalculEmpreinteCarbone
+# 🌱 CO₂cou - Carbon Tracker (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Bienvenue sur **CO₂cou**, une application Angular permettant de **suivre et sensibiliser à son empreinte carbone** à travers des simulations simples et pédagogiques.
 
-## Development server
+> ⚠️ **Projet fictif** réalisé dans le cadre d’un apprentissage Angular.  
+> Toutes les données sont simulées et utilisées à des fins éducatives.
 
-To start a local development server, run:
+---
+
+## 🚀 Fonctionnalités
+
+### 🏠 Accueil (Dashboard)
+- Affichage d’un **score carbone hebdomadaire**
+- Liste d’**actions écologiques**
+- Résumé par catégories :
+  - 🚗 Transport
+  - 🍽️ Alimentation
+  - ⚡ Énergie
+- Utilisation de **RxJS (Observable)** pour un affichage réactif
+
+---
+
+### 📊 Calcul d’empreinte carbone
+- Simulation de trajets
+- Calcul :
+  - Distance totale
+  - Consommation moyenne
+  - Émissions de CO₂
+- Génération aléatoire de voyages
+- Affichage sous forme de cartes + tableau
+
+---
+
+### 💡 Conseils écologiques
+- Liste d’articles
+- Filtrage dynamique (recherche)
+- Mise en avant des articles “featured”
+
+---
+
+### 📩 Formulaire de contact
+- Formulaire réactif avec validation Angular
+- Vérification :
+  - Nom
+  - Email
+  - Téléphone
+  - Message
+- Feedback utilisateur en temps réel
+
+---
+
+### 📄 Mentions légales
+- Page alimentée via **Observable (RxJS)**
+- Données fictives (projet pédagogique)
+
+---
+
+## 🧠 Concepts Angular utilisés
+
+- ✅ Components standalone  
+- ✅ Data binding (`{{ }}`, `[ ]`, `( )`, `[(ngModel)]`)  
+- ✅ Reactive Forms  
+- ✅ Services & injection de dépendances  
+- ✅ Routing  
+- ✅ Directives (`*ngIf`, `*ngFor`, `ngClass`)  
+- ✅ RxJS & Observables (`async pipe`)  
+- ✅ Architecture modulaire  
+
+---
+
+## 🎨 UI / UX
+
+- Design moderne (blanc / vert / gris 🌿)  
+- Cartes avec ombres et animations  
+- Responsive (mobile friendly)  
+- Feedback utilisateur (erreurs, états)  
+
+---
+
+## 🛠️ Installation
 
 ```bash
+# Cloner le projet
+git clone https://github.com/ton-username/co2cou.git
+
+# Aller dans le dossier
+cd co2cou
+
+# Installer les dépendances
+npm install
+
+# Lancer le projet
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
